@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 function Login(){
 
     const [cont, setCount]=useState([{username:"",password:""}]);
-    
+    const navigate= useNavigate();
     let changeState=(event)=>{
        setCount((currname)=>{
         return{...currname,[event.target.name]:(event.target.value)}
@@ -20,9 +20,15 @@ function Login(){
           'Content-Type':'application/json'
         }
       });
-      const res= await data.json();
-      console.log(res);
+      const res= await data.text();
+      Redirect();      
     };
+    
+
+    let Redirect= ()=>{
+        navigate("https://zerodhadashboard001.netlify.app/");
+       
+    }
 
 
     return(
