@@ -13,7 +13,7 @@ function Login(){
     };
     let handleSubmit=async(event)=>{
      event.preventDefault();   
-     const data=await fetch('http://localhost:8080/login',{
+     const data=await fetch('https://zerodha-backend-zb72.onrender.com/login',{
         method:'POST',
         body:JSON.stringify(cont),
         headers:{
@@ -26,7 +26,7 @@ function Login(){
     
 
     let Redirect= ()=>{
-        navigate("https://zerodhadashboard001.netlify.app/");
+        navigate("/dashboard");
        
     }
 
@@ -50,7 +50,7 @@ function Login(){
                         </p>
                         
                         <br/>
-                        <button style={{width:"40%" ,margin:"0 auto"}} className="p-2 mb-3 mt-23 fs-5 btn btn-primary">continue</button>
+                        <button style={{width:"40%" ,margin:"0 auto"}} className="p-2 mb-3 mt-23 fs-5 btn btn-primary">continue<a href="https://zerodha-project-dwj8.onrender.com"></a></button>
                     </form>
                     
                     
